@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Searching Algorithm Visualizer</title>
+    <link rel="stylesheet" href="searching_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Searching Algorithm Visualizer</h1>
+        <p>Visualize Searching Algorithms with Real-time Operations</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Algorithm</label>
+            <select id="algorithm" onchange="updateComplexity()">
+                <option value="linear">Linear Search</option>
+                <option value="binary">Binary Search</option>
+                <option value="jump">Jump Search</option>
+                <option value="exponential">Exponential Search</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Array Size</label>
+            <input type="range" id="size" min="10" max="100" value="30">
+        </div>
+
+        <div class="control-group">
+            <label>Search Value</label>
+            <input type="number" id="searchValue" placeholder="Enter value">
+        </div>
+
+        <div class="control-group">
+            <label>Speed</label>
+            <input type="range" id="speed" min="50" max="1000" value="300">
+        </div>
+
+        <button onclick="generateNewArray()">
+            🔄 New Array
+        </button>
+
+        <button onclick="startSearching()" id="searchBtn">
+            🚀 Start Searching
+        </button>
+    </div>
+
+    <div id="array-container"></div>
+
+    <div class="complexity">
+        <div class="complexity-box">
+            <h3>Time Complexity</h3>
+            <span id="timeComplexity">O(n)</span>
+        </div>
+        <div class="complexity-box">
+            <h3>Space Complexity</h3>
+            <span id="spaceComplexity">O(1)</span>
+        </div>
+    </div>
+
+    <div class="code-box">
+        <pre id="algorithmCode">// Select algorithm to view code</pre>
+        <button onclick="copyCode()">📋 Copy Code</button>
+    </div>
+    <div class="home" onclick="window.location.href='index.html';">
+        <i class="fas fa-home"></i>
+    </div>
+    
+
+    <script src="searching_script.js"></script>
+</body>
+</html>

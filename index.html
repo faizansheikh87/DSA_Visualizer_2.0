@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualizer Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">DSA Visualizer Pro</h1>
+        <button class="main-btn" onclick="toggleOptions()">
+            <span>Explore Now</span>
+        </button>
+        
+        <div class="options-container" id="optionsContainer">
+            <div class="option-btn" data-feature="sorting" onclick="window.location.href='sorting_2.html';">
+                <i class="fas fa-sort-amount-down"></i>
+                <h2>Sorting Algorithms</h2>
+                <p>Visualize bubble, quick, merge sort and more</p>
+            </div>
+            <div class="option-btn" data-feature="searching" onclick="window.location.href='searching_index.html';">
+                <i class="fas fa-search-plus"></i>
+                <h2>Search Techniques</h2>
+                <p>Explore binary, linear, and hash searches</p>
+            </div>
+            
+            <div class="option-btn" data-feature="about" onclick="window.location.href='about.html';">
+                <i class="fas fa-users"></i>
+                <h2>About Us</h2>
+                <p>Meet our team and vision</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Modal and Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="featureModal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+
+    <!-- Space Animation Container -->
+    <div class="canvas-container">
+        <canvas id="spaceCanvas"></canvas>
+    </div>
+    <div class="auth-buttons">
+        <button id="loginBtn" onclick="login()">🔑 Login</button>
+        <button id="logoutBtn" onclick="logout()" style="display: none;">🚪 Logout</button>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

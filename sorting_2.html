@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="sorting_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Sorting Algorithm Visualizer</h1>
+        <p>Visualize Sorting Algorithms with Real-time Operations</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Algorithm</label>
+            <select id="algorithm" onchange="updateComplexity()">
+                <option value="bubble">Bubble Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="selection">Selection Sort</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Array Size</label>
+            <input type="range" id="size" min="10" max="100" value="30">
+        </div>
+
+        <div class="control-group">
+            <label>Speed</label>
+            <input type="range" id="speed" min="50" max="1000" value="300">
+        </div>
+
+        <button onclick="generateNewArray()">
+            🔄 New Array
+        </button>
+
+        <button onclick="startSorting()" id="sortBtn">
+            🚀 Start Sorting
+        </button>
+    </div>
+
+    <div id="array-container"></div>
+
+    <div class="complexity">
+        <div class="complexity-box">
+            <h3>Time Complexity</h3>
+            <span id="timeComplexity">O(n²)</span>
+        </div>
+        <div class="complexity-box">
+            <h3>Space Complexity</h3>
+            <span id="spaceComplexity">O(1)</span>
+        </div>
+    </div>
+
+    <div class="code-box">
+        <pre id="algorithmCode">// Select algorithm to view code</pre>
+        <button onclick="copyCode()">📋 Copy Code</button>
+    </div>
+    <div class="home" onclick="window.location.href='index.html';">
+        <i class="fas fa-home"></i>
+    </div>
+    
+
+    <script src="sorting_2.js"></script>
+</body>
+</html>
